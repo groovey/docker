@@ -16,6 +16,18 @@ The Most commonly used docker services
     GRANT ALL PRIVILEGES ON *.* TO 'web'@'%' WITH GRANT OPTION;
     FLUSH PRIVILEGES;
 
+### Mysql show users
+
+    use mysql;
+    SELECT user FROM user;
+    SELECT 
+        user, 
+        host, 
+        account_locked, 
+        password_expired
+    FROM
+        user;
+
 ### Phpmyadmin
 
     http://192.168.99.101:8080/
