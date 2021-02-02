@@ -12,6 +12,8 @@ volumes:
     driver: local
   MONGO:
     driver: local
+  POSTGRES:
+    driver: local
 
 services:
   # Mysql service
@@ -80,6 +82,10 @@ services:
     restart: always
     environment:
       POSTGRES_PASSWORD: webdevel
+    ports:
+      - 5432:5432
+    volumes:
+      - ./POSTGRES:/var/lib/postgresql/data
 
   # Adminier
   adminer:
