@@ -15,6 +15,7 @@ volumes:
 
 services:
   # Mysql service
+  # server: mysql
   # username: root
   # password: webdevel
   mysql:
@@ -69,3 +70,20 @@ services:
       - MONGO:/data/db
     networks:
       - common
+
+  # Postgres
+  # server: postgres
+  # username: postgres
+  # password: webdevel
+  postgres:
+    image: postgres:13.1
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: webdevel
+
+  # Adminier
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8181:8080
