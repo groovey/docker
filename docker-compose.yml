@@ -85,7 +85,7 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - ./POSTGRES:/var/lib/postgresql/data
+      - POSTGRES:/var/lib/postgresql/data
 
   # Adminier
   adminer:
