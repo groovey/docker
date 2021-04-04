@@ -49,47 +49,47 @@ services:
     depends_on:
       - mysql
 
-  # Redis service
-  redis:
-    image: redis:6.0
-    container_name: redis
-    ports:
-      - 6379:6379
-    command: ["redis-server", "--appendonly", "yes"]
-    volumes:
-      - REDIS:/data
-    networks:
-      - common
+  # # Redis service
+  # redis:
+  #   image: redis:6.0
+  #   container_name: redis
+  #   ports:
+  #     - 6379:6379
+  #   command: ["redis-server", "--appendonly", "yes"]
+  #   volumes:
+  #     - REDIS:/data
+  #   networks:
+  #     - common
 
-  # Mongo service
-  mongo:
-    image: mongo:4.4
-    ports:
-      - "27017:27017"
-    container_name: mongo
-    restart: always
-    volumes:
-      - MONGO:/data/db
-    networks:
-      - common
+  # # Mongo service
+  # mongo:
+  #   image: mongo:4.4
+  #   ports:
+  #     - "27017:27017"
+  #   container_name: mongo
+  #   restart: always
+  #   volumes:
+  #     - MONGO:/data/db
+  #   networks:
+  #     - common
 
-  # Postgres
-  # server: (your ip address)
-  # username: postgres
-  # password: webdevel
-  postgres:
-    image: postgres:13.1
-    restart: always
-    environment:
-      POSTGRES_PASSWORD: webdevel
-    ports:
-      - 5432:5432
-    volumes:
-      - POSTGRES:/var/lib/postgresql/data
+  # # Postgres
+  # # server: (your ip address)
+  # # username: postgres
+  # # password: webdevel
+  # postgres:
+  #   image: postgres:13.1
+  #   restart: always
+  #   environment:
+  #     POSTGRES_PASSWORD: webdevel
+  #   ports:
+  #     - 5432:5432
+  #   volumes:
+  #     - POSTGRES:/var/lib/postgresql/data
 
-  # Adminier
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8181:8080
+  # # Adminier
+  # adminer:
+  #   image: adminer
+  #   restart: always
+  #   ports:
+  #     - 8181:8080
