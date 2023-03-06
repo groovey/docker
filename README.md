@@ -1,12 +1,12 @@
-### Docker
+# Docker
 
-The most commonly used docker services
+The most commonly used docker services.
 
-### Start
+## Start
 
-    $ docker-compose up -d
+    docker-compose up -d
 
-### Mysql 8 create a user
+## Mysql 8 create a user
 
     docker-compose exec mysql mysql -u root -p
 
@@ -15,7 +15,7 @@ The most commonly used docker services
     GRANT ALL PRIVILEGES ON *.* TO 'web'@'%' WITH GRANT OPTION;
     FLUSH PRIVILEGES;
 
-### Mysql show users
+## Mysql show users
 
     use mysql;
     SELECT user FROM user;
@@ -27,7 +27,7 @@ The most commonly used docker services
     FROM
         user;
 
-### Phpmyadmin
+## Phpmyadmin
 
     http://192.168.99.101:8080/
     server: mysql
