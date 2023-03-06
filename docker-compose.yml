@@ -60,7 +60,7 @@ services:
 
   # Mongo service
   mongo:
-    image: mongo:4.4
+    image: mongo:6.0.4
     ports:
       - "27017:27017"
     container_name: mongo
@@ -72,7 +72,7 @@ services:
 
   # Postgres
   postgres:
-    image: postgres:13.1
+    image: postgres:15
     restart: always
     environment:
       POSTGRES_PASSWORD: webdevel
