@@ -1,13 +1,12 @@
-### Docker Common
+### Docker
 
-The Most commonly used docker services
+The most commonly used docker services
 
 ### Start
 
     $ docker-compose up -d
 
 ### Mysql 8 create a user
-
 
     docker-compose exec mysql mysql -u root -p
 
@@ -33,6 +32,4 @@ The Most commonly used docker services
     http://192.168.99.101:8080/
     server: mysql
     username: root
-    password: webdevel
-
-
+    password:  
