@@ -17,9 +17,6 @@ volumes:
 
 services:
   # Mysql service
-  # server: (your ip address)
-  # username: root
-  # password: webdevel
   mysql:
     image: mysql:8.0
     container_name: mysql
@@ -37,7 +34,7 @@ services:
 
   # Phpmyadmin service
   phpmyadmin:
-    image: phpmyadmin:5.0
+    image: phpmyadmin:5.2
     container_name: phpmyadmin
     restart: always
     ports:
@@ -74,9 +71,6 @@ services:
       - common
 
   # Postgres
-  # server: (your ip address)
-  # username: postgres
-  # password: webdevel
   postgres:
     image: postgres:13.1
     restart: always

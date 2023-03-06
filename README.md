@@ -29,7 +29,15 @@ The most commonly used docker services.
 
 ## Phpmyadmin
 
-    http://192.168.99.101:8080/
+    http://localhost:8080/
     server: mysql
     username: root
-    password:  
+    password: webdevel  
+
+## Connect via Mysql Workbench
+
+    hostname: 127.0.0.1
+    port: 3306
+    username: root
+    password: webdevel
+    
