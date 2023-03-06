@@ -31,7 +31,7 @@ services:
       MYSQL_ROOT_PASSWORD: webdevel
     volumes:
       - MYSQL:/var/lib/mysql/
-      - C:/CODE/docker-common/mysql/8.0/my.cnf:/etc/mysql/conf.d/my.cnf
+      - C:/CODE/docker/mysql/8.0/my.cnf:/etc/mysql/conf.d/my.cnf
     networks:
       - common
 
@@ -48,6 +48,7 @@ services:
       - common
     depends_on:
       - mysql
+
   # Redis service
   redis:
     image: redis:6.0
