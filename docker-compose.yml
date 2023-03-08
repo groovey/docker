@@ -16,6 +16,39 @@ volumes:
     driver: local
 
 services:
+
+  # Php 8.2.3 laravel service
+  laravel:
+    image: laravel:1.0
+    build:
+      context: ./php/8.2.3-fpm
+      dockerfile: Dockerfile
+    container_name: php
+    restart: unless-stopped
+    tty: true
+    working_dir: /var/www/html/laravel
+    volumes:
+      - ../laravel:/var/www/html/laravel
+    networks:
+      - common
+    depends_on:
+      - nginx
+
+  # Webserver service
+  nginx:
+    image: nginx:1.18
+    container_name: nginx
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "80:80"
+    working_dir: /var/www/html
+    volumes:
+      - ../laravel:/var/www/html/laravel
+      - ./nginx/laravel.conf:/etc/nginx/conf.d/laravel.conf
+    networks:
+      - common
+
   # Mysql service
   mysql:
     image: mysql:8.0
